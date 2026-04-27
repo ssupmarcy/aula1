@@ -1,0 +1,29 @@
+name: teste html
+
+on:
+   push:
+      branches: ["main"]
+
+jobs:
+   teste-html
+       runs-on: ubuntu-latest 
+
+       steps:
+          name: testar h1
+            uses: action/checkout@v4
+
+            name: configurar node.js
+            uses: action/setup-node@v4
+
+            with:
+            node-version: 20
+
+            name: dependencias
+            uses: npm install
+
+            name: rodar teste
+            uses: npm test
+
+
+            
+   
